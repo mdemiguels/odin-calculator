@@ -1,6 +1,14 @@
 :root {
-    --primary-bg-color: #FFF;
-    --secondary-bg-color: #000;
+    --primary-bg-color: #2a2929;
+    --secondary-bg-color: #d4d3d2;
+    --operation-btn-bg-color: #f89209;
+    --options-btn-bg-color: #767877;
+    --numbers-btn-bg-color: #595957;
+    --close-btn-bg-color: #fe5f56;
+    --minimize-btn-bg-color: #ffbd2d;
+    --maximize-btn-bg-color: #2ac642;
+    --font-color: #ececec;
+
 }
 
 * {
@@ -15,6 +23,8 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--secondary-bg-color);
+    color: var(--font-color);
 }
 
 main {
@@ -24,6 +34,94 @@ main {
     align-items: center;
 }
 
-.calculator {
+button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    color: var(--font-color);
+    font-size: 18px;
+}
 
+.calculator {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 15px;
+    background-color: var(--primary-bg-color);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 5px;
+}
+
+.operation > span {
+    font-size: 25px;
+}
+.result > span {
+    font-size: 25px;
+}
+
+.buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.number-row {
+    display: flex;
+    gap: 5px;
+}
+
+.number-row:last-child>button {
+    width: 100%;
+    border-radius: 40px;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.operators > button {
+    background-color: var(--operation-btn-bg-color);
+}
+.number-row > button {
+    background-color: var(--numbers-btn-bg-color);
+}
+.number-row:first-child > button {
+    background-color: var(--options-btn-bg-color);
+}
+
+.window-buttons {
+    display: flex;
+    gap: 7px;
+}
+
+.window-buttons > button {
+    width: 10px;
+    height: 10px;
+}
+
+.close-button {
+    background-color: var(--close-btn-bg-color);
+}
+
+.minimize-button {
+    background-color: var(--minimize-btn-bg-color);
+}
+
+.maximize-button {
+    background-color: var(--maximize-btn-bg-color);
 }
