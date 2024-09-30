@@ -1,3 +1,7 @@
+let number1 = '';
+let number2 = '';
+let operator = '';
+
 const add = function(a, b) {
     a = parseInt(a);
     b = parseInt(b);
@@ -18,4 +22,10 @@ const divide = function(a, b) {
 
   return a / b;
 
+};
+
+const operate = function(opeartor, a, b) {
+
+    add(a, b);
+    
 };
