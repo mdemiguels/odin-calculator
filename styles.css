@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
 
 :root {
-    --primary-bg-color: #2a2929;
-    --secondary-bg-color: #d4d3d2;
+    --primary-bg-color: #303030;
+    --secondary-bg-color: #23231f;
     --operation-btn-bg-color: #f89209;
     --options-btn-bg-color: #767877;
     --numbers-btn-bg-color: #595957;
@@ -29,6 +29,11 @@ body {
     color: var(--font-color);
 }
 
+header {
+    text-align: center;
+    padding: 30px;
+}
+
 main {
     flex: 1;
     display: flex;
@@ -52,7 +57,7 @@ button {
     flex-shrink: 0;
     gap: 15px;
     background-color: var(--primary-bg-color);
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
 }
 
@@ -128,4 +133,18 @@ button {
 }
 .maximize-button {
     background-color: var(--maximize-btn-bg-color);
+}
+
+
+footer {
+    text-align: center;
+    padding: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--operation-btn-bg-color);
+}
+a:hover {
+    color: var(--minimize-btn-bg-color);
 }
