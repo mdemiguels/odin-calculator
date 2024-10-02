@@ -78,6 +78,9 @@ button {
     justify-content: end;
     white-space: nowrap;
     flex-shrink: 0;
+}
+
+.result {
     direction: rtl;
 }
 

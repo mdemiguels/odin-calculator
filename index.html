@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./styles.css" />
-        <script src="./script.js" defer></script>
+        <script type="module" src="./script.js" defer></script>
         <title>Odin Calculator</title>
     </head>
     <body>
@@ -47,11 +47,11 @@
                         <div class="number-row"><button>0</button></div>
                     </div>
                     <div class="operators">
-                        <button>&div;</button>
-                        <button>&times;</button>
-                        <button>&minus;</button>
-                        <button>&plus;</button>
-                        <button>&equals;</button>
+                        <button value="division">&div;</button>
+                        <button value="multiplication">&times;</button>
+                        <button value="substraction">&minus;</button>
+                        <button value="addition">&plus;</button>
+                        <button id="operate-button" value="equals">&equals;</button>
                     </div>
                 </div>
             </div>
