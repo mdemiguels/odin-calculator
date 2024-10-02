@@ -2,7 +2,7 @@
 
 :root {
     --primary-bg-color: #303030;
-    --secondary-bg-color: #23231f;
+    --secondary-bg-color: #5b5b5b;
     --operation-btn-bg-color: #f89209;
     --options-btn-bg-color: #767877;
     --numbers-btn-bg-color: #595957;
@@ -68,11 +68,26 @@ button {
     align-items: end;
     gap: 5px;
 }
+.result {
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+}
+.operation {
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+}
 .operation > span {
     font-size: 25px;
+    color: var(--options-btn-bg-color);
 }
 .result > span {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 

@@ -3,10 +3,12 @@ let number2 = "";
 let operator = "";
 let displayValue = "0";
 
+const resultDisplay = document.querySelector(".result>span");
+const operationDisplay = document.querySelector(".operation>span");
 const buttons = document.querySelector(".buttons");
 
 document.addEventListener("DOMContentLoaded", () => {
-  
+  resultDisplay.textContent = displayValue;
 });
 
 const add = function (a, b) {

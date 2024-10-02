@@ -30,7 +30,7 @@ The calculator can perform basic arithmetic operations:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/odin-calculator.git
+git clone https://github.com/mdemiguels/odin-calculator.git
 ```
 
 2. Open the index.html file in your browser to use the calculator.
