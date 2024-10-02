@@ -1,3 +1,5 @@
+import { add, subtract, multiply, divide } from "./operations.js";
+
 let number1 = "";
 let number2 = "";
 let operator = "";
@@ -6,6 +8,8 @@ let displayValue = "0";
 const resultDisplay = document.querySelector(".result>span");
 const operationDisplay = document.querySelector(".operation>span");
 const numberButtons = document.querySelectorAll(".number-row button");
+const optionButtons = document.querySelectorAll(".number-row button");
+const operatorButtons = document.querySelectorAll(".operators button");
 
 document.addEventListener("DOMContentLoaded", () => {
     resultDisplay.textContent = displayValue;
@@ -18,32 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-const add = function (a, b) {
-    a = parseInt(a);
-    b = parseInt(b);
-    return a + b;
-};
-
-const subtract = function (a, b) {
-    return a - b;
-};
-
-const multiply = function (a, b) {
-    return a * b;
-};
-
-const divide = function (a, b) {
-    return a / b;
-};
-
-const operate = function (opeartor, a, b) {
-    add(a, b);
-};
-
 const refreshDisplay = function () {
-  if (resultDisplay.textContent === "0") {
-    resultDisplay.textContent = displayValue;
-  } else {
-    resultDisplay.textContent += displayValue;
-  }
+    if (resultDisplay.textContent === "0") {
+        resultDisplay.textContent = displayValue;
+    } else {
+        resultDisplay.textContent += displayValue;
+    }
 };
