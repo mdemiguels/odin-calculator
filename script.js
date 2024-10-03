@@ -11,6 +11,9 @@ const resultDisplay = document.querySelector(".result>span");
 const operationDisplay = document.querySelector(".operation>span");
 const numberButtons = document.querySelectorAll(".number-row button");
 const operatorButtons = document.querySelectorAll(".operators button");
+const deleteButton = document.querySelector("#clear-button");
+const signButton = document.querySelector("#sign-button");
+const percentButton = document.querySelector("#percent-button");
 
 document.addEventListener("DOMContentLoaded", () => {
     numberButtons.forEach((numberButton) => {
@@ -18,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const numberValue = numberButton.textContent;
 
             if (isResultDisplaying) {
-				displayValue = "0";
+                displayValue = "0";
                 resetDisplayValues();
                 isResultDisplaying = false;
             }
@@ -36,18 +39,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (number1 === "" || number2 === "") {
                     holdNumber();
-                } else {
-                    holdNumber();
+                }
+
+                if (number1 !== "" && number2 !== "") {
                     operate();
                 }
             } else {
-                holdNumber();
+                if (!isResultDisplaying) {
+                    holdNumber();
+                }
                 if (number1 !== "" && number2 !== "") {
                     operate();
                 }
             }
         });
     });
+
+    deleteButton.addEventListener("click", () => {
+        resetOperationValues();
+        resetDisplayValues();
+    });
+
+    signButton.addEventListener("click", () => {
+		displayValue = -displayValue;
+		reloadDisplayResult();
+	});
+
+    percentButton.addEventListener("click", () => {
+		displayValue = displayValue/100;
+		reloadDisplayResult();
+	});
 });
 
 function inputNumber(number) {
@@ -67,12 +88,12 @@ function reloadDisplayOperation() {
 
 function operate() {
     try {
-        const number1Parsed = parseInt(number1);
-        const number2Parsed = parseInt(number2);
+        const number1Parsed = parseFloat(number1);
+        const number2Parsed = parseFloat(number2);
 
-		if (isNaN(number1Parsed) || isNaN(number2Parsed)) {
-			throw new Error();
-		}
+        if (isNaN(number1Parsed) || isNaN(number2Parsed)) {
+            throw new Error();
+        }
 
         if (operator !== "") {
             switch (operator) {
@@ -95,9 +116,9 @@ function operate() {
             isResultDisplaying = true;
         }
     } catch (error) {
-		displayValue = "Syntax error"
+        displayValue = "Syntax error";
     } finally {
-		reloadDisplayResult();
+        reloadDisplayResult();
         resetOperationValues();
     }
 }
@@ -126,8 +147,12 @@ function resetOperationValues() {
 }
 
 function resetDisplayValues() {
-	resultDisplay.textContent = "";
-	operationDisplay.textContent = "";
+    displayValue = "0";
+    resultDisplay.textContent = "0";
+    operationDisplay.textContent = "";
 }
 
-function formatDisplayResult() {}
+function formatDisplayResult() {
+    displayValue = parseFloat(displayValue).toFixed(2);
+    displayValue = parseFloat(displayValue).toString();
+}
