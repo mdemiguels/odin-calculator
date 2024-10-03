@@ -80,10 +80,6 @@ button {
     flex-shrink: 0;
 }
 
-.result {
-    direction: rtl;
-}
-
 .result > span, .operation > span {
     display: inline-block;
     width: 100%;
