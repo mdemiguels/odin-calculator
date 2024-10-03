@@ -1,6 +1,4 @@
 const add = function (a, b) {
-    a = parseInt(a);
-    b = parseInt(b);
     return a + b;
 };
 
@@ -16,8 +14,4 @@ const divide = function (a, b) {
     return a / b;
 };
 
-const operate = function (opeartor, a, b) {
-    add(a, b);
-};
-
-export { add, subtract, multiply, divide, operate };
+export { add, subtract, multiply, divide};
