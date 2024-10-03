@@ -14,6 +14,7 @@ const operatorButtons = document.querySelectorAll(".operators button");
 const deleteButton = document.querySelector("#clear-button");
 const signButton = document.querySelector("#sign-button");
 const percentButton = document.querySelector("#percent-button");
+const dotButton = document.querySelector("#dot-button");
 
 document.addEventListener("DOMContentLoaded", () => {
     numberButtons.forEach((numberButton) => {
@@ -25,6 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 resetDisplayValues();
                 isResultDisplaying = false;
             }
+
+			if (displayValue.includes('.')) {
+				dotButton.disabled = true;
+			} else {
+				dotButton.disabled = false;
+			}
             inputNumber(numberValue);
             reloadDisplayResult();
         });
@@ -33,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     operatorButtons.forEach((operatorButton) => {
         operatorButton.addEventListener("click", () => {
             const operatorValue = operatorButton.value;
+			dotButton.disabled = false;
 
             if (operatorValue !== "equals") {
                 holdOperator(operatorValue);
@@ -73,7 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function inputNumber(number) {
     if (displayValue === "0") {
-        displayValue = number;
+		if (number === ".") {
+			displayValue = "0.";
+		} else {
+			displayValue = number;
+		}
     } else {
         displayValue += number;
     }

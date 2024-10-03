@@ -124,8 +124,12 @@ button {
     display: flex;
     gap: 5px;
 }
-.number-row:last-child>button {
-    width: 100%;
+.number-row:last-child {
+    display: flex;
+
+}
+.number-row:last-child :first-child {
+    flex: 1;
     border-radius: 40px;
 }
 .operators {
